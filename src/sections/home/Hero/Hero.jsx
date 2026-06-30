@@ -81,17 +81,22 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg-video" aria-hidden="true">
-        <video
-  ref={videoRef}
-  src={heroCityVideo}
-  poster={heroPoster}
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="none"
-/>
-      </div>
+  <picture>
+    <source media="(max-width: 576px)" srcSet={heroPoster} />
+    <img className="hero-mobile-poster" src={heroPoster} alt="" />
+  </picture>
+
+  <video
+    ref={videoRef}
+    src={heroCityVideo}
+    poster={heroPoster}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="none"
+  />
+</div>
 
       <div className="hero-local-polygons" aria-hidden="true">
         <span className="hero-local-poly hero-local-poly-one"></span>
