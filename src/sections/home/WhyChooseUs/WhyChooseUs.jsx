@@ -36,11 +36,11 @@ function WhyChooseUs() {
       <div className="container why-container">
         <motion.div
           className="why-content"
-          initial={{ opacity: 0, x: -34, filter: "blur(8px)" }}
+          initial={{ opacity: 0, x: -34 }}
           animate={
             isInView
-              ? { opacity: 1, x: 0, filter: "blur(0px)" }
-              : { opacity: 0, x: -34, filter: "blur(8px)" }
+              ? { opacity: 1, x: 0 }
+              : { opacity: 0, x: -34 }
           }
           transition={{
             duration: 0.85,
@@ -111,11 +111,11 @@ function WhyChooseUs() {
 
       <motion.div
         className="why-visual"
-        initial={{ opacity: 0, x: 34, filter: "blur(8px)" }}
+        initial={{ opacity: 0, x: 34}}
         animate={
           isInView
-            ? { opacity: 1, x: 0, filter: "blur(0px)" }
-            : { opacity: 0, x: 34, filter: "blur(8px)" }
+            ? { opacity: 1, x: 0 }
+            : { opacity: 0, x: 34 }
         }
         transition={{
           duration: 0.9,

@@ -63,13 +63,11 @@ function AnimatedLetters({ text, start, delay = 0, className = "" }) {
           variants={{
             hidden: {
               opacity: 0,
-              y: 18,
-              filter: "blur(5px)",
+              y: 18
             },
             visible: {
               opacity: 1,
               y: 0,
-              filter: "blur(0px)",
               transition: {
                 duration: 0.48,
                 ease: [0.22, 1, 0.36, 1],
@@ -156,11 +154,11 @@ function TrustMetrics() {
       <div className="container trust-story-container">
         <motion.div
           className="trust-image-wrap"
-          initial={{ opacity: 0, x: -34, filter: "blur(6px)" }}
+          initial={{ opacity: 0, x: -34 }}
           animate={
             isInView
-              ? { opacity: 1, x: 0, filter: "blur(0px)" }
-              : { opacity: 0, x: -34, filter: "blur(6px)" }
+              ? { opacity: 1, x: 0}
+              : { opacity: 0, x: -34 }
           }
           transition={{
             duration: 0.9,
@@ -175,11 +173,11 @@ function TrustMetrics() {
 
         <motion.div
           className="trust-story-content"
-          initial={{ opacity: 0, x: 34, filter: "blur(6px)" }}
+          initial={{ opacity: 0, x: 34 }}
           animate={
             isInView
-              ? { opacity: 1, x: 0, filter: "blur(0px)" }
-              : { opacity: 0, x: 34, filter: "blur(6px)" }
+              ? { opacity: 1, x: 0 }
+              : { opacity: 0, x: 34 }
           }
           transition={{
             duration: 0.9,
@@ -208,11 +206,11 @@ function TrustMetrics() {
           </h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 18, filter: "blur(4px)" }}
+            initial={{ opacity: 0, y: 18 }}
             animate={
               isInView
-                ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                : { opacity: 0, y: 18, filter: "blur(4px)" }
+                ? { opacity: 1, y: 0 }
+                : { opacity: 0, y: 18 }
             }
             transition={{
               duration: 0.75,
@@ -229,11 +227,11 @@ function TrustMetrics() {
 
           <motion.div
             className="trust-experience-block"
-            initial={{ opacity: 0, y: 22, filter: "blur(6px)" }}
+            initial={{ opacity: 0, y: 22}}
             animate={
               isInView
-                ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                : { opacity: 0, y: 22, filter: "blur(6px)" }
+                ? { opacity: 1, y: 0}
+                : { opacity: 0, y: 22 }
             }
             transition={{
               duration: 0.8,

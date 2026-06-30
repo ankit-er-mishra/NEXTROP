@@ -881,3 +881,68 @@ button {
     text-shadow: none !important;
   }
 }
+
+
+/* Global performance fix: remove all blur effects on every device */
+
+*,
+*::before,
+*::after {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+[style*="blur"],
+[style*="filter"] {
+  filter: none !important;
+}
+
+/* Common blurred / glass UI elements */
+
+.navbar,
+.nav-links,
+.nav-btn,
+.mobile-nav-btn,
+.hero-label,
+.hero-primary-btn,
+.hero-secondary-btn,
+.hero-capabilities span,
+.practice-card,
+.practice-area-card,
+.practice-list,
+.knowledge-card,
+.knowledge-preview,
+.why-card,
+.trust-card,
+.footer,
+.footer-contact-card,
+.footer-contact-icon,
+.contact-form-card,
+.contact-access-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Remove blur from animated hero letters / framer motion inline styles */
+
+.hero-letter,
+.animated-letter,
+.hero-title,
+.hero-description,
+.hero-label,
+.hero-capabilities,
+.hero-scroll-cue {
+  filter: none !important;
+}
+
+/* Keep navbar clean after blur removal */
+
+.navbar {
+  background: #ffffff !important;
+}
+
+/* Keep dropdown/mobile menu clean */
+
+.nav-links {
+  background: #ffffff !important;
+}

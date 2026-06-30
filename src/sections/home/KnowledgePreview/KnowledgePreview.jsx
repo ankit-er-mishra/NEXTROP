@@ -92,11 +92,11 @@ function KnowledgePreview() {
             <motion.article
               className="knowledge-item"
               key={article.title}
-              initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+              initial={{ opacity: 0, y: 24 }}
               animate={
                 isInView
-                  ? { opacity: 1, y: 0, filter: "blur(0px)" }
-                  : { opacity: 0, y: 24, filter: "blur(6px)" }
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 24  }
               }
               transition={{
                 duration: 0.72,
