@@ -1,0 +1,737 @@
+@import "./variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  background: var(--bg-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section-pill {
+  display: inline-block;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(109, 146, 200, 0.12);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  color: white;
+
+  padding: 1rem 1.6rem;
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  font-weight: 750;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+  color: var(--primary);
+
+  border: 1px solid var(--border);
+  padding: 1rem 1.6rem;
+  border-radius: 10px;
+
+  font-size: 0.95rem;
+  font-weight: 750;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+  border-color: rgba(109, 146, 200, 0.45);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 70px 0;
+  }
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(109, 146, 200, 0.22);
+  color: var(--primary);
+}
+
+
+/* Premium global background polygons */
+
+/* Premium global background polygons */
+
+.home-page {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 82% 10%, rgba(109, 146, 200, 0.1), transparent 30%),
+    radial-gradient(circle at 12% 48%, rgba(31, 41, 71, 0.055), transparent 28%),
+    radial-gradient(circle at 86% 78%, rgba(109, 146, 200, 0.085), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 42%, #ffffff 72%, #f8fafc 100%);
+}
+
+.home-main {
+  position: relative;
+  z-index: 2;
+}
+
+.page-bg-polygons {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.poly {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(11, 42, 90, 0.22),
+      rgba(31, 41, 71, 0.08)
+    );
+
+  border: 1px solid rgba(109, 146, 200, 0.12);
+  filter: blur(0.15px);
+}
+
+/* Large top-right background polygon */
+.poly-one {
+  top: 120px;
+  right: -190px;
+
+  width: 560px;
+  height: 560px;
+
+  clip-path: polygon(22% 0, 100% 18%, 82% 100%, 0 76%);
+  opacity: 0.72;
+}
+
+/* Small hero-left soft polygon */
+.poly-two {
+  top: 260px;
+  left: -120px;
+
+  width: 280px;
+  height: 240px;
+
+  clip-path: polygon(0 18%, 76% 0, 100% 74%, 22% 100%);
+  opacity: 0.28;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.16),
+      rgba(31, 41, 71, 0.045)
+    );
+}
+
+/* Trust metrics / practice left */
+.poly-three {
+  top: 860px;
+  left: -260px;
+
+  width: 700px;
+  height: 560px;
+
+  clip-path: polygon(0 14%, 82% 0, 100% 72%, 18% 100%);
+  opacity: 0.6;
+}
+
+/* Practice right small polygon */
+.poly-four {
+  top: 1380px;
+  right: 8%;
+
+  width: 360px;
+  height: 300px;
+
+  clip-path: polygon(18% 0, 100% 24%, 74% 100%, 0 70%);
+  opacity: 0.32;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 5, 14, 0.18),
+      rgba(31, 41, 71, 0.06)
+    );
+}
+
+/* Why choose large right polygon */
+.poly-five {
+  top: 1720px;
+  right: -280px;
+
+  width: 760px;
+  height: 620px;
+
+  clip-path: polygon(28% 0, 100% 12%, 78% 100%, 0 82%);
+  opacity: 0.54;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.2),
+      rgba(31, 41, 71, 0.075)
+    );
+}
+
+/* Why choose small left polygon */
+.poly-six {
+  top: 1980px;
+  left: 6%;
+
+  width: 260px;
+  height: 230px;
+
+  clip-path: polygon(14% 0, 100% 12%, 86% 100%, 0 78%);
+  opacity: 0.22;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 41, 71, 0.07),
+      rgba(109, 146, 200, 0.13)
+    );
+}
+
+/* Knowledge hub left big polygon */
+.poly-seven {
+  top: 2460px;
+  left: -220px;
+
+  width: 620px;
+  height: 520px;
+
+  clip-path: polygon(0 18%, 76% 0, 100% 78%, 14% 100%);
+  opacity: 0.44;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.2),
+      rgba(31, 41, 71, 0.075)
+    );
+}
+
+/* Knowledge hub top-right smaller polygon */
+.poly-eight {
+  top: 2680px;
+  right: 14%;
+
+  width: 320px;
+  height: 270px;
+
+  clip-path: polygon(24% 0, 100% 18%, 76% 100%, 0 84%);
+  opacity: 0.26;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 41, 94, 0.2),
+      rgba(31, 41, 71, 0.075)
+    );
+}
+
+/* Final CTA background atmosphere */
+.poly-nine {
+  top: 3240px;
+  right: -180px;
+
+  width: 560px;
+  height: 480px;
+
+  clip-path: polygon(25% 0, 100% 20%, 78% 100%, 0 80%);
+  opacity: 0.42;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.2),
+      rgba(31, 41, 71, 0.075)
+    );
+}
+
+/* Lower left small polygon */
+.poly-ten {
+  top: 3540px;
+  left: 10%;
+
+  width: 230px;
+  height: 210px;
+
+  clip-path: polygon(0 22%, 70% 0, 100% 68%, 20% 100%);
+  opacity: 0.2;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(19, 53, 104, 0.17),
+      rgba(31, 41, 71, 0.055)
+    );
+}
+
+/* Footer area soft polygon */
+.poly-eleven {
+  bottom: 120px;
+  right: 18%;
+
+  width: 260px;
+  height: 230px;
+
+  clip-path: polygon(18% 0, 100% 18%, 82% 100%, 0 76%);
+  opacity: 0.18;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 28, 63, 0.16),
+      rgba(31, 41, 71, 0.05)
+    );
+}
+
+/* Very large bottom-left faded polygon */
+.poly-twelve {
+  bottom: -260px;
+  left: -260px;
+
+  width: 680px;
+  height: 560px;
+
+  clip-path: polygon(0 12%, 86% 0, 100% 74%, 18% 100%);
+  opacity: 0.26;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 24, 61, 0.18),
+      rgba(8, 18, 47, 0.07)
+    );
+}
+
+/* Extra hero polygons - slightly darker but still premium */
+
+.hero-poly-a {
+  top: 92px;
+  right: 23%;
+
+  width: 360px;
+  height: 310px;
+
+  clip-path: polygon(18% 0, 100% 16%, 78% 100%, 0 72%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(66, 113, 183, 0.28),
+      rgba(31, 41, 71, 0.1)
+    );
+
+  border: 1px solid rgba(109, 146, 200, 0.12);
+  opacity: 0.36;
+}
+
+.hero-poly-b {
+  top: 380px;
+  right: 42%;
+
+  width: 260px;
+  height: 220px;
+
+  clip-path: polygon(0 22%, 74% 0, 100% 76%, 20% 100%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(45, 72, 112, 0.22),
+      rgba(31, 41, 71, 0.075)
+    );
+
+  border: 1px solid rgba(4, 38, 91, 0.1);
+  opacity: 0.28;
+}
+
+.hero-poly-c {
+  top: 120px;
+  left: 4%;
+
+  width: 230px;
+  height: 190px;
+
+  clip-path: polygon(42% 0, 100% 20%, 44% 100%, 0 76%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 22, 47, 0.18),
+      rgba(10, 24, 66, 0.055)
+    );
+
+  border: 1px solid rgba(2, 37, 89, 0.08);
+  opacity: 0.2;
+}
+
+.hero-poly-d {
+  top: 1410px;
+  right: 40%;
+
+  width: 420px;
+  height: 260px;
+
+  clip-path: polygon(24% 0, 100% 78%, 36% 100%, 0 82%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 7, 19, 0.24),
+      rgba(31, 41, 71, 0.09)
+    );
+
+  border: 1px solid rgba(1, 31, 77, 0.12);
+  opacity: 0.3;
+}
+
+.hero-poly-e {
+  top: 610px;
+  right: 8%;
+
+  width: 420px;
+  height: 260px;
+
+  clip-path: polygon(24% 0, 100% 18%, 76% 100%, 0 82%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(1, 26, 62, 0.24),
+      rgba(39, 53, 95, 0.09)
+    );
+
+  border: 1px solid rgba(2, 28, 67, 0.12);
+  opacity: 0.3;
+}
+
+.hero-poly-f {
+  top: 490px;
+  right: 70%;
+
+  width: 420px;
+  height: 260px;
+
+  clip-path: polygon(54% 0, 100% 18%, 76% 100%, 0 82%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.24),
+      rgba(4, 12, 36, 0.09)
+    );
+
+  border: 1px solid rgba(109, 146, 200, 0.12);
+  opacity: 0.3;
+}
+
+.hero-poly-g {
+  bottom: 1220px;
+  right: 85%;
+
+  width: 260px;
+  height: 220px;
+
+  clip-path: polygon(0 22%, 74% 0, 100% 76%, 20% 100%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(5, 25, 56, 0.22),
+      rgba(31, 41, 71, 0.075)
+    );
+
+  border: 1px solid rgba(0, 15, 37, 0.1);
+  opacity: 0.28;
+}
+
+.hero-poly-h {
+  bottom: 840px;
+  right: 42%;
+
+  width: 360px;
+  height: 320px;
+
+  clip-path: polygon(0 22%, 74% 0, 90% 76%, 20% 100%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 25, 53, 0.22),
+      rgba(31, 41, 71, 0.075)
+    );
+
+  border: 1px solid rgba(6, 27, 58, 0.1);
+  opacity: 0.28;
+}
+
+.hero-poly-i {
+  bottom: 220px;
+  left: 24%;
+
+  width: 230px;
+  height: 190px;
+
+  clip-path: polygon(42% 0, 100% 20%, 74% 100%, 0 76%);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.18),
+      rgba(1, 12, 46, 0.055)
+    );
+
+  border: 1px solid rgba(2, 37, 89, 0.08);
+  opacity: 0.5;
+}
+
+
+
+.home-page .navbar {
+  z-index: 1000;
+}
+
+.home-page .footer {
+  position: relative;
+  z-index: 3;
+}
+
+.poly {
+  animation: softFloat 18s ease-in-out infinite alternate;
+}
+
+.poly:nth-child(even) {
+  animation-duration: 22s;
+}
+
+@keyframes softFloat {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(18px, -14px, 0);
+  }
+}
+.animated-letters {
+  display: inline-block;
+  perspective: 900px;
+}
+
+.animated-letter {
+  display: inline-block;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+
+/* Smooth premium section flow */
+
+.home-main > section {
+  position: relative;
+}
+
+.home-main > section:not(:last-child)::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: min(1180px, 88%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(109, 146, 200, 0.18),
+      rgba(31, 41, 71, 0.12),
+      rgba(109, 146, 200, 0.18),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+/* Soft fade above divider */
+.home-main > section:not(:last-child)::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 90px;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(248, 250, 252, 0.34)
+    );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-main > section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Prevent animated headings from breaking inside words */
+
+.hero-title,
+.practice-top h2,
+.why-left h2,
+.knowledge-header h2,
+.final-cta-title,
+.founder-title {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+.hero-title-line,
+.animated-letters {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+}
+
+.hero-word,
+.animated-word-unit {
+  display: inline-flex !important;
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+.hero-word:not(:last-child),
+.animated-word-unit:not(:last-child) {
+  margin-right: 0.28em;
+}
+
+.hero-letter,
+.animated-letter {
+  display: inline-block !important;
+  flex-shrink: 0;
+  white-space: nowrap !important;
+}
+
+.hero-space,
+.animated-space {
+  display: none !important;
+}
+
+
+@media (max-width: 768px) {
+  .practice-top h2,
+  .why-left h2,
+  .knowledge-header h2,
+  .final-cta-title,
+  .founder-title {
+    font-size: clamp(2rem, 7.5vw, 2.45rem) !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.9px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-top h2,
+  .why-left h2,
+  .knowledge-header h2,
+  .final-cta-title,
+  .founder-title {
+    font-size: clamp(1.65rem, 6.8vw, 2.05rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.6px !important;
+  }
+}

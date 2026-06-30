@@ -1,0 +1,36 @@
+.contact-page {
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.contact-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(109, 146, 200, 0.08),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 82% 44%,
+      rgba(225, 189, 114, 0.07),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(248, 250, 252, 0.36),
+      rgba(255, 255, 255, 1)
+    );
+
+  pointer-events: none;
+}
+
+.contact-page > section {
+  position: relative;
+  z-index: 2;
+}

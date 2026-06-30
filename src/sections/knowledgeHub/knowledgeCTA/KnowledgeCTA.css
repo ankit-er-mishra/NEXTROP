@@ -1,0 +1,146 @@
+.knowledge-cta-section {
+  position: relative;
+  z-index: 3;
+
+  padding: 0 0 110px;
+
+  background: #ffffff;
+}
+
+.knowledge-cta-panel {
+  position: relative;
+
+  padding: 2.2rem;
+
+  border-radius: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 41, 71, 0.96),
+      rgba(23, 33, 61, 0.92)
+    );
+
+  box-shadow:
+    0 26px 76px rgba(15, 23, 42, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  overflow: hidden;
+}
+
+.knowledge-cta-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(109, 146, 200, 0.2),
+      transparent 34%
+    ),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 42%);
+
+  pointer-events: none;
+}
+
+.knowledge-cta-panel > div,
+.knowledge-cta-button {
+  position: relative;
+  z-index: 2;
+}
+
+.knowledge-cta-panel span {
+  display: inline-block;
+
+  color: rgba(225, 189, 114, 0.92);
+
+  font-size: 0.68rem;
+  font-weight: 860;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  margin-bottom: 0.9rem;
+}
+
+.knowledge-cta-panel h2 {
+  max-width: 680px;
+
+  color: #ffffff;
+
+  font-size: 2.3rem;
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -1.2px;
+
+  margin-bottom: 0.8rem;
+}
+
+.knowledge-cta-panel p {
+  max-width: 720px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 1rem;
+  line-height: 1.72;
+  font-weight: 520;
+}
+
+.knowledge-cta-button {
+  min-height: 48px;
+
+  padding: 0 1.2rem;
+
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--primary);
+
+  font-size: 0.82rem;
+  font-weight: 860;
+  letter-spacing: 0.04em;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.knowledge-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.22),
+    0 0 32px rgba(225, 189, 114, 0.2);
+}
+
+@media (max-width: 768px) {
+  .knowledge-cta-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+
+  .knowledge-cta-panel h2 {
+    font-size: 1.7rem;
+  }
+
+  .knowledge-cta-button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,775 @@
+.institutional-vision {
+  position: relative;
+  z-index: 3;
+
+  padding: 58px 0 58px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(248, 250, 252, 0.9) 42%,
+      rgba(255, 255, 255, 0.98) 100%
+    );
+
+  overflow: hidden;
+}
+
+.institutional-vision::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+
+  height: 190px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 255, 255, 0)
+    );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.institutional-container {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  gap: 5.8rem;
+  align-items: center;
+}
+
+/* Soft background architecture */
+
+.institutional-bg-shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.institutional-shape {
+  position: absolute;
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.14),
+      rgba(31, 41, 71, 0.06)
+    );
+
+  border: 1px solid rgba(109, 146, 200, 0.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 24px 64px rgba(31, 41, 71, 0.05);
+}
+
+.institutional-shape-one {
+  width: 460px;
+  height: 255px;
+  top: 76px;
+  right: -170px;
+  clip-path: polygon(16% 0, 100% 20%, 78% 100%, 0 76%);
+  opacity: 0.66;
+  transform: rotate(12deg);
+}
+
+.institutional-shape-two {
+  width: 340px;
+  height: 190px;
+  bottom: 105px;
+  left: -145px;
+  clip-path: polygon(0 22%, 86% 0, 100% 70%, 20% 100%);
+  opacity: 0.63;
+  transform: rotate(-13deg);
+}
+
+.institutional-shape-three {
+  width: 210px;
+  height: 118px;
+  top: 170px;
+  left: 42%;
+  clip-path: polygon(10% 0, 100% 26%, 72% 100%, 0 68%);
+  opacity: 0.62;
+  transform: rotate(-18deg);
+}
+
+.institutional-shape-four {
+  width: 390px;
+  height: 220px;
+  bottom: -92px;
+  right: 12%;
+  clip-path: polygon(12% 0, 100% 16%, 80% 100%, 0 78%);
+  opacity: 0.62;
+  transform: rotate(8deg);
+}
+
+.institutional-shape-five {
+  width: 300px;
+  height: 168px;
+  top: 260px;
+  left: -80px;
+  clip-path: polygon(18% 0, 100% 16%, 74% 100%, 0 78%);
+  opacity: 0.76;
+  transform: rotate(14deg);
+}
+
+.institutional-shape-six {
+  width: 250px;
+  height: 145px;
+  top: 50px;
+  left: 10%;
+  clip-path: polygon(8% 0, 100% 24%, 72% 100%, 0 70%);
+  opacity: 0.78;
+  transform: rotate(-10deg);
+}
+
+.institutional-shape-seven {
+  width: 220px;
+  height: 122px;
+  bottom: 120px;
+  right: 42%;
+  clip-path: polygon(12% 0, 100% 18%, 80% 100%, 0 80%);
+  opacity: 0.87;
+  transform: rotate(-16deg);
+}
+
+.institutional-shape-eight {
+  width: 180px;
+  height: 105px;
+  top: 340px;
+  right: -30px;
+  clip-path: polygon(20% 0, 100% 20%, 78% 100%, 0 70%);
+  opacity: 0.94;
+  transform: rotate(10deg);
+}
+
+/* Soft connector line */
+
+.institutional-flow-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  z-index: 4;
+
+  width: min(1180px, 86%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(109, 146, 200, 0.12) 18%,
+      rgba(31, 41, 71, 0.14) 50%,
+      rgba(109, 146, 200, 0.12) 82%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.58),
+    0 -18px 54px rgba(109, 146, 200, 0.06);
+}
+
+.institutional-flow-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -1px;
+
+  width: 72%;
+  height: 92px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(109, 146, 200, 0.08),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+/* Image visual */
+
+.institutional-visual-wrap {
+  position: relative;
+
+  width: 100%;
+  min-height: 575px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.institutional-visual-halo {
+  position: absolute;
+  inset: -52px -64px;
+
+  border-radius: 52px;
+
+  background:
+    radial-gradient(
+      circle at 42% 48%,
+      rgba(31, 41, 71, 0.42),
+      rgba(31, 41, 71, 0.16) 36%,
+      transparent 62%
+    ),
+    radial-gradient(
+      circle at 55% 68%,
+      rgba(17, 24, 39, 0.24),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at 62% 38%,
+      rgba(109, 146, 200, 0.18),
+      transparent 28%
+    );
+
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.institutional-visual {
+  position: relative;
+
+  width: min(560px, 100%);
+  min-height: 560px;
+
+  border-radius: 38px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.58),
+      rgba(248, 250, 252, 0.22)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.64);
+
+  box-shadow:
+    0 34px 88px rgba(15, 23, 42, 0.18),
+    0 68px 135px rgba(15, 23, 42, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.institutional-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 44px 44px;
+
+  mask-image: radial-gradient(circle at center, black, transparent 76%);
+
+  pointer-events: none;
+}
+
+.institutional-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(248, 250, 252, 0.28) 0%,
+      transparent 16%,
+      transparent 76%,
+      rgba(248, 250, 252, 0.36) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(248, 250, 252, 0.22) 0%,
+      transparent 20%,
+      transparent 74%,
+      rgba(248, 250, 252, 0.34) 100%
+    );
+
+  pointer-events: none;
+}
+
+.institutional-visual img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 560px;
+
+  display: block;
+  object-fit: cover;
+  object-position: center;
+
+  transform: scale(1.02);
+  opacity: 0.92;
+
+  filter:
+    saturate(0.96)
+    contrast(1.05)
+    brightness(0.88);
+}
+
+.institutional-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(17, 24, 39, 0.34),
+      transparent 44%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 42%,
+      rgba(17, 24, 39, 0.52)
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(109, 146, 200, 0.16),
+      transparent 40%
+    );
+
+  pointer-events: none;
+}
+
+.institutional-image-caption {
+  position: absolute;
+  left: 1.55rem;
+  right: 1.55rem;
+  bottom: 1.55rem;
+  z-index: 5;
+
+  padding: 1.05rem 1.15rem;
+
+  border-radius: 18px;
+
+  background: rgba(17, 24, 39, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.18);
+}
+
+.institutional-image-caption small {
+  display: block;
+
+  color: rgba(225, 189, 114, 0.92);
+
+  font-size: 0.67rem;
+  line-height: 1.35;
+  font-weight: 820;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  margin-bottom: 0.36rem;
+}
+
+.institutional-image-caption strong {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.92);
+
+  font-size: 0.94rem;
+  line-height: 1.55;
+  font-weight: 660;
+}
+
+/* Corner architectural accents */
+
+.institutional-corner {
+  position: absolute;
+  z-index: 6;
+
+  width: 58px;
+  height: 58px;
+
+  pointer-events: none;
+}
+
+.institutional-corner-one {
+  top: 1.15rem;
+  left: 1.15rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.52);
+  border-left: 1px solid rgba(255, 255, 255, 0.52);
+}
+
+.institutional-corner-two {
+  right: 1.15rem;
+  bottom: 1.15rem;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.44);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.44);
+}
+
+/* Content */
+
+.institutional-content {
+  max-width: 790px;
+}
+
+.institutional-label {
+  display: inline-block;
+
+  color: rgba(31, 41, 71, 0.58);
+
+  font-size: 0.7rem;
+  line-height: 1;
+  font-weight: 840;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+
+  margin-bottom: 1.25rem;
+}
+
+.institutional-title {
+  color: var(--primary);
+
+  font-size: 3.35rem;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -2px;
+
+  margin-bottom: 1.55rem;
+
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.institutional-content p {
+  max-width: 720px;
+
+  color: rgba(31, 41, 71, 0.7);
+
+  font-size: 1.1rem;
+  line-height: 1.84;
+  font-weight: 540;
+
+  margin-bottom: 1.25rem;
+}
+
+.institutional-closing {
+  max-width: 690px;
+
+  margin-top: 1.75rem;
+  padding: 1.35rem 1.45rem;
+
+  border-radius: 22px;
+
+  color: rgba(31, 41, 71, 0.9);
+
+  font-size: 1.08rem;
+  line-height: 1.72;
+  font-weight: 800;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(248, 250, 252, 0.5)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.76);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 16px 38px rgba(26, 37, 64, 0.055),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+.institutional-proof-strip {
+  margin-top: 1.75rem;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.institutional-proof-strip span {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0.75rem 0.98rem;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(109, 146, 200, 0.18);
+
+  color: rgba(31, 41, 71, 0.8);
+
+  font-size: 0.78rem;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: 0.04em;
+
+  box-shadow:
+    0 12px 28px rgba(26, 37, 64, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+/* Smooth connector to TrustArchitecture */
+
+.institutional-bottom-flow-line {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 4;
+
+  width: min(1180px, 86%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(109, 146, 200, 0.14) 18%,
+      rgba(31, 41, 71, 0.16) 50%,
+      rgba(109, 146, 200, 0.14) 82%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.52),
+    0 -18px 54px rgba(109, 146, 200, 0.07);
+}
+
+.institutional-bottom-flow-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+
+  width: 72%;
+  height: 88px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(109, 146, 200, 0.07),
+      transparent 38%
+    );
+
+  pointer-events: none;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .institutional-container {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+  }
+
+  .institutional-title {
+    font-size: 2.85rem;
+  }
+
+  .institutional-content p {
+    font-size: 1.04rem;
+  }
+
+  .institutional-visual-wrap {
+    min-height: 520px;
+  }
+
+  .institutional-visual {
+    min-height: 520px;
+  }
+
+  .institutional-visual img {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 992px) {
+  .institutional-vision {
+    padding: 96px 0 96px;
+  }
+
+  .institutional-container {
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+  }
+
+  .institutional-visual-wrap {
+    min-height: auto;
+    order: 1;
+  }
+
+  .institutional-content {
+    max-width: 780px;
+    order: 2;
+  }
+
+  .institutional-visual {
+    width: 100%;
+    max-width: 720px;
+    min-height: 410px;
+  }
+
+  .institutional-visual img {
+    min-height: 410px;
+  }
+
+  .institutional-title {
+    font-size: clamp(2.35rem, 6vw, 2.9rem);
+    line-height: 1.12;
+    letter-spacing: -1.35px;
+  }
+}
+
+@media (max-width: 576px) {
+  .institutional-vision {
+    padding: 76px 0 82px;
+  }
+
+  .institutional-container {
+    gap: 2.4rem;
+  }
+
+  .institutional-visual {
+    min-height: 310px;
+    border-radius: 24px;
+  }
+
+  .institutional-visual-halo {
+    inset: -30px -28px;
+  }
+
+  .institutional-visual::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(248, 250, 252, 0.18) 0%,
+        transparent 18%,
+        transparent 78%,
+        rgba(248, 250, 252, 0.24) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(248, 250, 252, 0.2) 0%,
+        transparent 20%,
+        transparent 76%,
+        rgba(248, 250, 252, 0.28) 100%
+      );
+  }
+
+  .institutional-visual img {
+    min-height: 310px;
+  }
+
+  .institutional-corner {
+    width: 40px;
+    height: 40px;
+  }
+
+  .institutional-image-caption {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+
+    padding: 0.85rem 0.9rem;
+    border-radius: 15px;
+  }
+
+  .institutional-image-caption small {
+    font-size: 0.6rem;
+  }
+
+  .institutional-image-caption strong {
+    font-size: 0.84rem;
+  }
+
+  .institutional-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+  }
+
+  .institutional-title {
+    font-size: clamp(1.9rem, 8vw, 2.35rem);
+    line-height: 1.16;
+    letter-spacing: -0.8px;
+  }
+
+  .institutional-content p {
+    font-size: 0.94rem;
+    line-height: 1.78;
+  }
+
+  .institutional-closing {
+    padding: 1.1rem;
+    border-radius: 18px;
+
+    font-size: 0.95rem;
+    line-height: 1.72;
+  }
+
+  .institutional-proof-strip {
+    gap: 0.6rem;
+  }
+
+  .institutional-proof-strip span {
+    padding: 0.64rem 0.78rem;
+    font-size: 0.72rem;
+  }
+
+  .institutional-shape-one {
+    width: 260px;
+    height: 150px;
+    top: 70px;
+    right: -160px;
+    opacity: 0.18;
+  }
+
+  .institutional-shape-two {
+    width: 250px;
+    height: 145px;
+    left: -150px;
+    opacity: 0.18;
+  }
+
+  .institutional-shape-three,
+  .institutional-shape-four,
+  .institutional-shape-five,
+  .institutional-shape-six,
+  .institutional-shape-seven,
+  .institutional-shape-eight {
+    display: none;
+  }
+}

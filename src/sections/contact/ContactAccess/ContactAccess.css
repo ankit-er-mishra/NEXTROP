@@ -1,0 +1,522 @@
+.contact-access-section {
+  position: relative;
+
+  padding: 44px 0 72px;
+
+  background:
+    radial-gradient(
+      circle at 14% 22%,
+      rgba(109, 146, 200, 0.065),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 84% 68%,
+      rgba(225, 189, 114, 0.07),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1),
+      rgba(248, 250, 252, 0.62)
+    );
+
+  overflow: hidden;
+}
+
+/* Translucent section-end line */
+
+.contact-access-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 3;
+
+  width: min(1180px, 86%);
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(109, 146, 200, 0.16) 18%,
+      rgba(31, 41, 71, 0.18) 50%,
+      rgba(109, 146, 200, 0.16) 82%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7),
+    0 -18px 54px rgba(109, 146, 200, 0.08);
+}
+
+/* Visible institutional polygons below hero */
+
+.contact-access-polygons {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.contact-access-polygon {
+  position: absolute;
+  display: block;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.16),
+      rgba(31, 41, 71, 0.045)
+    );
+
+  border: 1px solid rgba(109, 146, 200, 0.08);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 24px 70px rgba(31, 41, 71, 0.035);
+}
+
+.contact-access-polygon-one {
+  width: 720px;
+  height: 380px;
+
+  top: -122px;
+  right: -150px;
+
+  clip-path: polygon(14% 0, 100% 18%, 80% 100%, 0 76%);
+  transform: rotate(-7deg);
+
+  opacity: 0.92;
+}
+
+.contact-access-polygon-two {
+  width: 560px;
+  height: 305px;
+
+  top: 135px;
+  left: -210px;
+
+  clip-path: polygon(0 18%, 88% 0, 100% 70%, 18% 100%);
+  transform: rotate(12deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(225, 189, 114, 0.16),
+      rgba(109, 146, 200, 0.075)
+    );
+
+  border-color: rgba(225, 189, 114, 0.08);
+
+  opacity: 0.92;
+}
+
+.contact-access-polygon-three {
+  width: 430px;
+  height: 238px;
+
+  top: 34px;
+  right: 17%;
+
+  clip-path: polygon(12% 0, 100% 22%, 76% 100%, 0 70%);
+  transform: rotate(15deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 41, 71, 0.075),
+      rgba(109, 146, 200, 0.13)
+    );
+
+  opacity: 0.72;
+}
+
+.contact-access-polygon-four {
+  width: 340px;
+  height: 188px;
+
+  bottom: 12px;
+  right: -105px;
+
+  clip-path: polygon(16% 0, 100% 20%, 78% 100%, 0 74%);
+  transform: rotate(-11deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.11),
+      rgba(31, 41, 71, 0.045)
+    );
+
+  opacity: 0.78;
+}
+
+.contact-access-polygon-five {
+  width: 310px;
+  height: 172px;
+
+  top: 72px;
+  left: 34%;
+
+  clip-path: polygon(12% 0, 100% 18%, 72% 100%, 0 78%);
+  transform: rotate(-18deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(109, 146, 200, 0.08)
+    );
+
+  border-color: rgba(109, 146, 200, 0.06);
+
+  opacity: 0.75;
+}
+
+.contact-access-polygon-six {
+  width: 260px;
+  height: 144px;
+
+  top: 295px;
+  right: 38%;
+
+  clip-path: polygon(0 24%, 82% 0, 100% 68%, 20% 100%);
+  transform: rotate(9deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(225, 189, 114, 0.1),
+      rgba(31, 41, 71, 0.035)
+    );
+
+  border-color: rgba(225, 189, 114, 0.06);
+
+  opacity: 0.68;
+}
+
+.contact-access-polygon-seven {
+  width: 390px;
+  height: 214px;
+
+  bottom: -116px;
+  left: 24%;
+
+  clip-path: polygon(14% 0, 100% 18%, 80% 100%, 0 76%);
+  transform: rotate(-8deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(109, 146, 200, 0.12),
+      rgba(31, 41, 71, 0.04)
+    );
+
+  opacity: 0.76;
+}
+
+.contact-access-polygon-eight {
+  width: 190px;
+  height: 106px;
+
+  top: 20px;
+  left: 5%;
+
+  clip-path: polygon(16% 0, 100% 22%, 76% 100%, 0 72%);
+  transform: rotate(18deg);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(31, 41, 71, 0.055),
+      rgba(109, 146, 200, 0.095)
+    );
+
+  opacity: 0.6;
+}
+
+.contact-access-container {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-access-heading {
+  max-width: 760px;
+  margin-bottom: 3.9rem;
+}
+
+.contact-access-heading span {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 28px;
+
+  padding: 0 1rem;
+
+  border-radius: 999px;
+
+  color: rgba(31, 41, 71, 0.56);
+
+  font-size: 0.66rem;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  background: rgba(31, 41, 71, 0.055);
+  border: 1px solid rgba(31, 41, 71, 0.075);
+
+  margin-bottom: 1rem;
+}
+
+.contact-access-heading h2 {
+  color: var(--primary);
+
+  font-size: clamp(2.1rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+
+  margin-bottom: 1rem;
+
+  text-wrap: balance;
+}
+
+.contact-access-heading p {
+  max-width: 650px;
+
+  color: rgba(31, 41, 71, 0.66);
+
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 540;
+}
+
+/* Invisible 3-pillar grid */
+
+.contact-pillar-grid {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+
+  padding: 3.55rem 0;
+
+  border-top: 1px solid rgba(31, 41, 71, 0.13);
+  border-bottom: 1px solid rgba(31, 41, 71, 0.13);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.76),
+      rgba(255, 255, 255, 0.52),
+      rgba(255, 255, 255, 0.76)
+    );
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.contact-pillar {
+  position: relative;
+
+  min-height: 250px;
+
+  padding: 0 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: inherit;
+
+  transition:
+    transform 0.28s ease,
+    background 0.28s ease;
+}
+
+.contact-pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 1px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(31, 41, 71, 0.16),
+      transparent
+    );
+}
+
+.contact-pillar:first-child::before {
+  display: none;
+}
+
+.contact-pillar:hover {
+  transform: translateY(-4px);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(109, 146, 200, 0.06),
+      transparent 68%
+    );
+}
+
+.contact-pillar-icon {
+  width: 36px;
+  height: 36px;
+
+  margin-bottom: 1.35rem;
+
+  color: var(--primary);
+}
+
+.contact-pillar-icon svg {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-pillar-title {
+  color: rgba(31, 41, 71, 0.48);
+
+  font-size: 0.72rem;
+  line-height: 1;
+  font-weight: 860;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  margin-bottom: 0.9rem;
+}
+
+.contact-pillar-data {
+  display: block;
+
+  color: var(--primary);
+
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.35;
+  font-weight: 850;
+  letter-spacing: -0.35px;
+
+  margin-bottom: 0.72rem;
+}
+
+.contact-pillar p {
+  max-width: 290px;
+
+  color: rgba(31, 41, 71, 0.58);
+
+  font-size: 0.9rem;
+  line-height: 1.65;
+  font-weight: 540;
+}
+
+@media (max-width: 900px) {
+  .contact-pillar-grid {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .contact-pillar {
+    min-height: auto;
+
+    padding: 2.2rem 0;
+
+    border-bottom: 1px solid rgba(31, 41, 71, 0.1);
+  }
+
+  .contact-pillar:last-child {
+    border-bottom: 0;
+  }
+
+  .contact-pillar::before {
+    display: none;
+  }
+
+  .contact-pillar:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-access-section {
+    padding: 76px 0 84px;
+  }
+
+  .contact-access-polygon-one {
+    width: 350px;
+    height: 194px;
+    top: -48px;
+    right: -135px;
+    opacity: 0.74;
+  }
+
+  .contact-access-polygon-two {
+    width: 300px;
+    height: 165px;
+    top: 170px;
+    left: -165px;
+    opacity: 0.65;
+  }
+
+  .contact-access-polygon-three {
+    width: 230px;
+    height: 126px;
+    top: 40px;
+    right: -70px;
+    opacity: 0.5;
+  }
+
+  .contact-access-polygon-four,
+  .contact-access-polygon-five,
+  .contact-access-polygon-six,
+  .contact-access-polygon-seven,
+  .contact-access-polygon-eight {
+    display: none;
+  }
+
+  .contact-access-heading {
+    margin-bottom: 2.7rem;
+  }
+
+  .contact-access-heading h2 {
+    letter-spacing: -1px;
+  }
+
+  .contact-pillar-grid {
+    background: rgba(255, 255, 255, 0.76);
+  }
+
+  .contact-pillar {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-pillar p {
+    max-width: 100%;
+  }
+}
