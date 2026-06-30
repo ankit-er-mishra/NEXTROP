@@ -735,3 +735,57 @@ button {
     letter-spacing: -0.6px !important;
   }
 }
+
+@media (max-width: 576px) {
+  *,
+  *::before,
+  *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .navbar,
+  .nav-links,
+  .hero-primary-btn,
+  .hero-secondary-btn,
+  .footer,
+  .footer-contact-icon,
+  .practice-list,
+  .knowledge-preview,
+  .why-choose,
+  .trust-metrics,
+  .contact-form-card,
+  .contact-access-card,
+  .practice-area-card,
+  .knowledge-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .hero-title,
+  .hero-description,
+  .hero-label,
+  .hero-capabilities,
+  .section-title,
+  .section-description {
+    text-shadow: none !important;
+  }
+
+  .hero-local-polygons,
+  .practice-bg-shapes,
+  .knowledge-bg-shapes,
+  .why-bg-shapes {
+    display: none !important;
+  }
+}
+
+@media (max-width: 576px) {
+  [style*="blur"] {
+    filter: none !important;
+  }
+
+  .hero-letter,
+  .animated-letter {
+    filter: none !important;
+  }
+}
