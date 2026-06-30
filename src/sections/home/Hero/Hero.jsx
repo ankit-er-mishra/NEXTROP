@@ -2,6 +2,7 @@ import "./Hero.css";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import heroCityVideo from "../../../assets/videos/hero-city.mp4";
+import heroPoster from "../../../assets/images/hero-video-poster.jpg";
 
 function Hero() {
   const ease = [0.22, 1, 0.36, 1];
@@ -11,7 +12,7 @@ function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.75;
+      videoRef.current.playbackRate = 0.95;
     }
   }, []);
 
@@ -81,14 +82,15 @@ function Hero() {
     <section className="hero">
       <div className="hero-bg-video" aria-hidden="true">
         <video
-          ref={videoRef}
-          src={heroCityVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        />
+  ref={videoRef}
+  src={heroCityVideo}
+  poster={heroPoster}
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="none"
+/>
       </div>
 
       <div className="hero-local-polygons" aria-hidden="true">
