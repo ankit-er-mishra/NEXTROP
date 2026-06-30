@@ -38,7 +38,7 @@
   object-fit: cover;
   object-position: center center;
 
-  opacity: 0.9;
+  opacity: 1;
 
   filter:
     saturate(1.05)
@@ -107,6 +107,15 @@
     );
 
   pointer-events: none;
+}
+
+.hero-poster-image {
+  z-index: 0;
+  transition: opacity 0.35s ease;
+}
+
+.hero-poster-image.poster-hidden {
+  opacity: 0;
 }
 
 /* Hero polygons */
