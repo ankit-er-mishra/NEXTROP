@@ -6,12 +6,14 @@
   width: 100%;
   z-index: 1000;
 
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.72);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
   border-bottom: 1px solid rgba(232, 237, 243, 0.58);
+
+  isolation: isolate;
 
   transition:
     background 0.3s ease,
@@ -19,8 +21,24 @@
     border-color 0.3s ease;
 }
 
+.navbar::after {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: -1px;
+
+  height: 2px;
+
+  background: #ffffff;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
 .navbar-scrolled {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   border-bottom-color: rgba(232, 237, 243, 0.95);
 
   box-shadow:
@@ -28,6 +46,9 @@
 }
 
 .navbar-container {
+  position: relative;
+  z-index: 3;
+
   height: 82px;
 
   display: grid;
@@ -412,6 +433,3 @@
     display: none;
   }
 }
-
-
-
