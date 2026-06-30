@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroCityVideo from "../../../assets/videos/hero-city.mp4";
 import heroPoster from "../../../assets/images/hero-video-poster.jpg";
+import heroCityWebm from "../../../assets/videos/hero-city.webm";
 
 function Hero() {
   const ease = [0.22, 1, 0.36, 1];
@@ -148,15 +149,17 @@ useEffect(() => {
 
         {shouldPlayVideo && (
           <video
-            src={heroCityVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="none"
-            onCanPlay={() => setVideoReady(true)}
-            onLoadedData={() => setVideoReady(true)}
-          />
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="none"
+  onCanPlay={() => setVideoReady(true)}
+  onLoadedData={() => setVideoReady(true)}
+>
+  <source src={heroCityWebm} type="video/webm" />
+  <source src={heroCityVideo} type="video/mp4" />
+</video>
         )}
       </div>
 

@@ -1,9 +1,22 @@
 @import "./variables.css";
 
+/* Base Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 html {
@@ -18,11 +31,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
-  
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button,
@@ -33,6 +47,8 @@ textarea {
 
 button {
   border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul {
@@ -43,6 +59,8 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* Layout Helpers */
 
 .container {
   width: 90%;
@@ -57,15 +75,21 @@ img {
 .section-pill {
   display: inline-block;
   width: fit-content;
+
   padding: 8px 16px;
   border-radius: 999px;
+
   background: rgba(109, 146, 200, 0.12);
   color: var(--primary);
+
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
+  line-height: 1;
   text-transform: uppercase;
 }
+
+/* Global Buttons */
 
 .primary-btn {
   display: inline-flex;
@@ -73,16 +97,18 @@ img {
   justify-content: center;
 
   background: var(--primary);
-  color: white;
+  color: #ffffff;
 
   padding: 1rem 1.6rem;
   border-radius: 10px;
 
   font-size: 0.95rem;
   font-weight: 750;
+  line-height: 1;
 
-  cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .primary-btn:hover {
@@ -95,18 +121,22 @@ img {
   align-items: center;
   justify-content: center;
 
-  background: white;
+  background: #ffffff;
   color: var(--primary);
 
   border: 1px solid var(--border);
+
   padding: 1rem 1.6rem;
   border-radius: 10px;
 
   font-size: 0.95rem;
   font-weight: 750;
+  line-height: 1;
 
-  cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .secondary-btn:hover {
@@ -115,36 +145,42 @@ img {
   transform: translateY(-2px);
 }
 
-@media (max-width: 576px) {
-  .section {
-    padding: 70px 0;
-  }
-}
-
-a,
-button {
-  -webkit-tap-highlight-color: transparent;
-}
+/* Selection */
 
 ::selection {
   background: rgba(109, 146, 200, 0.22);
   color: var(--primary);
 }
 
-
-/* Premium global background polygons */
-
-/* Premium global background polygons */
+/* Home Page Background */
 
 .home-page {
   position: relative;
   overflow: hidden;
 
   background:
-    radial-gradient(circle at 82% 10%, rgba(109, 146, 200, 0.1), transparent 30%),
-    radial-gradient(circle at 12% 48%, rgba(31, 41, 71, 0.055), transparent 28%),
-    radial-gradient(circle at 86% 78%, rgba(109, 146, 200, 0.085), transparent 34%),
-    linear-gradient(180deg, #ffffff 0%, #f8fafc 42%, #ffffff 72%, #f8fafc 100%);
+    radial-gradient(
+      circle at 82% 10%,
+      rgba(109, 146, 200, 0.1),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 12% 48%,
+      rgba(31, 41, 71, 0.055),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 86% 78%,
+      rgba(109, 146, 200, 0.085),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 42%,
+      #ffffff 72%,
+      #f8fafc 100%
+    );
 }
 
 .home-main {
@@ -152,10 +188,22 @@ button {
   z-index: 2;
 }
 
+.home-page .navbar {
+  z-index: 1000;
+}
+
+.home-page .footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* Global Background Polygons */
+
 .page-bg-polygons {
   position: absolute;
   inset: 0;
   z-index: 1;
+
   pointer-events: none;
   overflow: hidden;
 }
@@ -163,6 +211,7 @@ button {
 .poly {
   position: absolute;
   display: block;
+
   pointer-events: none;
 
   background:
@@ -173,10 +222,8 @@ button {
     );
 
   border: 1px solid rgba(109, 146, 200, 0.12);
-  filter: blur(0.15px);
 }
 
-/* Large top-right background polygon */
 .poly-one {
   top: 120px;
   right: -190px;
@@ -188,7 +235,6 @@ button {
   opacity: 0.72;
 }
 
-/* Small hero-left soft polygon */
 .poly-two {
   top: 260px;
   left: -120px;
@@ -207,7 +253,6 @@ button {
     );
 }
 
-/* Trust metrics / practice left */
 .poly-three {
   top: 860px;
   left: -260px;
@@ -219,7 +264,6 @@ button {
   opacity: 0.6;
 }
 
-/* Practice right small polygon */
 .poly-four {
   top: 1380px;
   right: 8%;
@@ -238,7 +282,6 @@ button {
     );
 }
 
-/* Why choose large right polygon */
 .poly-five {
   top: 1720px;
   right: -280px;
@@ -248,6 +291,7 @@ button {
 
   clip-path: polygon(28% 0, 100% 12%, 78% 100%, 0 82%);
   opacity: 0.54;
+
   background:
     linear-gradient(
       135deg,
@@ -256,7 +300,6 @@ button {
     );
 }
 
-/* Why choose small left polygon */
 .poly-six {
   top: 1980px;
   left: 6%;
@@ -275,7 +318,6 @@ button {
     );
 }
 
-/* Knowledge hub left big polygon */
 .poly-seven {
   top: 2460px;
   left: -220px;
@@ -285,6 +327,7 @@ button {
 
   clip-path: polygon(0 18%, 76% 0, 100% 78%, 14% 100%);
   opacity: 0.44;
+
   background:
     linear-gradient(
       135deg,
@@ -293,7 +336,6 @@ button {
     );
 }
 
-/* Knowledge hub top-right smaller polygon */
 .poly-eight {
   top: 2680px;
   right: 14%;
@@ -312,7 +354,6 @@ button {
     );
 }
 
-/* Final CTA background atmosphere */
 .poly-nine {
   top: 3240px;
   right: -180px;
@@ -322,6 +363,7 @@ button {
 
   clip-path: polygon(25% 0, 100% 20%, 78% 100%, 0 80%);
   opacity: 0.42;
+
   background:
     linear-gradient(
       135deg,
@@ -330,7 +372,6 @@ button {
     );
 }
 
-/* Lower left small polygon */
 .poly-ten {
   top: 3540px;
   left: 10%;
@@ -349,7 +390,6 @@ button {
     );
 }
 
-/* Footer area soft polygon */
 .poly-eleven {
   bottom: 120px;
   right: 18%;
@@ -368,7 +408,6 @@ button {
     );
 }
 
-/* Very large bottom-left faded polygon */
 .poly-twelve {
   bottom: -260px;
   left: -260px;
@@ -387,7 +426,7 @@ button {
     );
 }
 
-/* Extra hero polygons - slightly darker but still premium */
+/* Extra Background Polygons */
 
 .hero-poly-a {
   top: 92px;
@@ -397,6 +436,7 @@ button {
   height: 310px;
 
   clip-path: polygon(18% 0, 100% 16%, 78% 100%, 0 72%);
+  opacity: 0.36;
 
   background:
     linear-gradient(
@@ -406,7 +446,6 @@ button {
     );
 
   border: 1px solid rgba(109, 146, 200, 0.12);
-  opacity: 0.36;
 }
 
 .hero-poly-b {
@@ -417,6 +456,7 @@ button {
   height: 220px;
 
   clip-path: polygon(0 22%, 74% 0, 100% 76%, 20% 100%);
+  opacity: 0.28;
 
   background:
     linear-gradient(
@@ -426,7 +466,6 @@ button {
     );
 
   border: 1px solid rgba(4, 38, 91, 0.1);
-  opacity: 0.28;
 }
 
 .hero-poly-c {
@@ -437,6 +476,7 @@ button {
   height: 190px;
 
   clip-path: polygon(42% 0, 100% 20%, 44% 100%, 0 76%);
+  opacity: 0.2;
 
   background:
     linear-gradient(
@@ -446,7 +486,6 @@ button {
     );
 
   border: 1px solid rgba(2, 37, 89, 0.08);
-  opacity: 0.2;
 }
 
 .hero-poly-d {
@@ -457,6 +496,7 @@ button {
   height: 260px;
 
   clip-path: polygon(24% 0, 100% 78%, 36% 100%, 0 82%);
+  opacity: 0.3;
 
   background:
     linear-gradient(
@@ -466,7 +506,6 @@ button {
     );
 
   border: 1px solid rgba(1, 31, 77, 0.12);
-  opacity: 0.3;
 }
 
 .hero-poly-e {
@@ -477,6 +516,7 @@ button {
   height: 260px;
 
   clip-path: polygon(24% 0, 100% 18%, 76% 100%, 0 82%);
+  opacity: 0.3;
 
   background:
     linear-gradient(
@@ -486,7 +526,6 @@ button {
     );
 
   border: 1px solid rgba(2, 28, 67, 0.12);
-  opacity: 0.3;
 }
 
 .hero-poly-f {
@@ -497,6 +536,7 @@ button {
   height: 260px;
 
   clip-path: polygon(54% 0, 100% 18%, 76% 100%, 0 82%);
+  opacity: 0.3;
 
   background:
     linear-gradient(
@@ -506,7 +546,6 @@ button {
     );
 
   border: 1px solid rgba(109, 146, 200, 0.12);
-  opacity: 0.3;
 }
 
 .hero-poly-g {
@@ -517,6 +556,7 @@ button {
   height: 220px;
 
   clip-path: polygon(0 22%, 74% 0, 100% 76%, 20% 100%);
+  opacity: 0.28;
 
   background:
     linear-gradient(
@@ -526,7 +566,6 @@ button {
     );
 
   border: 1px solid rgba(0, 15, 37, 0.1);
-  opacity: 0.28;
 }
 
 .hero-poly-h {
@@ -537,6 +576,7 @@ button {
   height: 320px;
 
   clip-path: polygon(0 22%, 74% 0, 90% 76%, 20% 100%);
+  opacity: 0.28;
 
   background:
     linear-gradient(
@@ -546,7 +586,6 @@ button {
     );
 
   border: 1px solid rgba(6, 27, 58, 0.1);
-  opacity: 0.28;
 }
 
 .hero-poly-i {
@@ -557,6 +596,7 @@ button {
   height: 190px;
 
   clip-path: polygon(42% 0, 100% 20%, 74% 100%, 0 76%);
+  opacity: 0.5;
 
   background:
     linear-gradient(
@@ -566,49 +606,9 @@ button {
     );
 
   border: 1px solid rgba(2, 37, 89, 0.08);
-  opacity: 0.5;
 }
 
-
-
-.home-page .navbar {
-  z-index: 1000;
-}
-
-.home-page .footer {
-  position: relative;
-  z-index: 3;
-}
-
-.poly {
-  animation: softFloat 18s ease-in-out infinite alternate;
-}
-
-.poly:nth-child(even) {
-  animation-duration: 22s;
-}
-
-@keyframes softFloat {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    transform: translate3d(18px, -14px, 0);
-  }
-}
-.animated-letters {
-  display: inline-block;
-  perspective: 900px;
-}
-
-.animated-letter {
-  display: inline-block;
-  transform-origin: bottom center;
-  will-change: transform, opacity;
-}
-
-/* Smooth premium section flow */
+/* Section Flow */
 
 .home-main > section {
   position: relative;
@@ -639,7 +639,6 @@ button {
   pointer-events: none;
 }
 
-/* Soft fade above divider */
 .home-main > section:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -666,7 +665,18 @@ button {
   z-index: 2;
 }
 
-/* Prevent animated headings from breaking inside words */
+/* Animated Text Safety */
+
+.animated-letters {
+  display: inline-block;
+  perspective: 900px;
+}
+
+.animated-letter {
+  display: inline-block;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
 
 .hero-title,
 .practice-top h2,
@@ -704,6 +714,7 @@ button {
   display: inline-block !important;
   flex-shrink: 0;
   white-space: nowrap !important;
+  filter: none !important;
 }
 
 .hero-space,
@@ -711,193 +722,11 @@ button {
   display: none !important;
 }
 
+/* Global Blur Removal */
 
-@media (max-width: 768px) {
-  .practice-top h2,
-  .why-left h2,
-  .knowledge-header h2,
-  .final-cta-title,
-  .founder-title {
-    font-size: clamp(2rem, 7.5vw, 2.45rem) !important;
-    line-height: 1.16 !important;
-    letter-spacing: -0.9px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .practice-top h2,
-  .why-left h2,
-  .knowledge-header h2,
-  .final-cta-title,
-  .founder-title {
-    font-size: clamp(1.65rem, 6.8vw, 2.05rem) !important;
-    line-height: 1.2 !important;
-    letter-spacing: -0.6px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  *,
-  *::before,
-  *::after {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  .navbar,
-  .nav-links,
-  .hero-primary-btn,
-  .hero-secondary-btn,
-  .footer,
-  .footer-contact-icon,
-  .practice-list,
-  .knowledge-preview,
-  .why-choose,
-  .trust-metrics,
-  .contact-form-card,
-  .contact-access-card,
-  .practice-area-card,
-  .knowledge-card {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  .hero-title,
-  .hero-description,
-  .hero-label,
-  .hero-capabilities,
-  .section-title,
-  .section-description {
-    text-shadow: none !important;
-  }
-
-  .hero-local-polygons,
-  .practice-bg-shapes,
-  .knowledge-bg-shapes,
-  .why-bg-shapes {
-    display: none !important;
-  }
-}
-
-@media (max-width: 576px) {
-  [style*="blur"] {
-    filter: none !important;
-  }
-
-  .hero-letter,
-  .animated-letter {
-    filter: none !important;
-  }
-}
-
-@media (max-width: 576px) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  [style*="transform"],
-  [style*="opacity"],
-  [style*="filter"] {
-    transform: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-
-  .hero-letter,
-  .animated-letter,
-  .hero-title,
-  .hero-description,
-  .hero-label,
-  .hero-capabilities,
-  .section-title,
-  .section-description {
-    transform: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-    text-shadow: none !important;
-  }
-
-  .hero-local-polygons,
-  .practice-bg-shapes,
-  .knowledge-bg-shapes,
-  .why-bg-shapes,
-  .footer-bg-shapes {
-    display: none !important;
-  }
-
-  .hero-bg-video video {
-    display: none !important;
-  }
-
-  .hero-scroll-cue {
-    display: none !important;
-  }
-}
-
-@media (max-width: 576px) {
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-
-  [style*="transform"],
-  [style*="opacity"],
-  [style*="filter"] {
-    transform: none !important;
-    opacity: 1 !important;
-    filter: none !important;
-  }
-
-  .hero-bg-video video {
-    display: none !important;
-  }
-
-  .hero-local-polygons,
-  .practice-bg-shapes,
-  .knowledge-bg-shapes,
-  .why-bg-shapes,
-  .footer-bg-shapes,
-  .hero-scroll-cue {
-    display: none !important;
-  }
-
-  .hero-title,
-  .hero-description,
-  .hero-label,
-  .hero-capabilities {
-    text-shadow: none !important;
-  }
-}
-
-
-/* Global performance fix: remove all blur effects on every device */
-
-*,
-*::before,
-*::after {
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-[style*="blur"],
-[style*="filter"] {
+[style*="blur"] {
   filter: none !important;
 }
-
-/* Common blurred / glass UI elements */
 
 .navbar,
 .nav-links,
@@ -923,26 +752,145 @@ button {
   -webkit-backdrop-filter: none !important;
 }
 
-/* Remove blur from animated hero letters / framer motion inline styles */
-
-.hero-letter,
-.animated-letter,
 .hero-title,
 .hero-description,
 .hero-label,
 .hero-capabilities,
-.hero-scroll-cue {
+.hero-scroll-cue,
+.animated-letter {
   filter: none !important;
 }
-
-/* Keep navbar clean after blur removal */
 
 .navbar {
   background: #ffffff !important;
 }
 
-/* Keep dropdown/mobile menu clean */
-
 .nav-links {
   background: #ffffff !important;
+}
+
+/* Render Performance */
+
+.practice-areas,
+.why-choose,
+.knowledge-preview,
+.footer,
+.trust-metrics {
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
+}
+
+/* Responsive Typography */
+
+@media (max-width: 768px) {
+  .practice-top h2,
+  .why-left h2,
+  .knowledge-header h2,
+  .final-cta-title,
+  .founder-title {
+    font-size: clamp(2rem, 7.5vw, 2.45rem) !important;
+    line-height: 1.16 !important;
+    letter-spacing: -0.9px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .section {
+    padding: 70px 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [style*="transform"],
+  [style*="opacity"],
+  [style*="filter"],
+  [style*="blur"] {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .hero-bg-video video {
+    display: none !important;
+  }
+
+  .page-bg-polygons,
+  .hero-local-polygons,
+  .practice-bg-shapes,
+  .knowledge-bg-shapes,
+  .why-bg-shapes,
+  .footer-bg-shapes,
+  .hero-scroll-cue {
+    display: none !important;
+  }
+
+  .hero-title,
+  .hero-description,
+  .hero-label,
+  .hero-capabilities,
+  .section-title,
+  .section-description {
+    text-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .primary-btn:hover,
+  .secondary-btn:hover,
+  .hero-primary-btn:hover,
+  .hero-secondary-btn:hover {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-top h2,
+  .why-left h2,
+  .knowledge-header h2,
+  .final-cta-title,
+  .founder-title {
+    font-size: clamp(1.65rem, 6.8vw, 2.05rem) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.6px !important;
+  }
+}
+
+/* Touch Device Optimization */
+
+@media (hover: none) {
+  a,
+  button,
+  .card,
+  .practice-card,
+  .practice-area-card,
+  .knowledge-card,
+  .why-card,
+  .trust-card,
+  .hero-primary-btn,
+  .hero-secondary-btn {
+    transition: none !important;
+  }
+
+  a:hover,
+  button:hover,
+  .card:hover,
+  .practice-card:hover,
+  .practice-area-card:hover,
+  .knowledge-card:hover,
+  .why-card:hover,
+  .trust-card:hover,
+  .hero-primary-btn:hover,
+  .hero-secondary-btn:hover {
+    transform: none !important;
+  }
 }

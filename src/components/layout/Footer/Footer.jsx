@@ -108,7 +108,7 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.google.com/maps?q=307%2C%20Surya%20Complex%2C%20Veer%20Savarkar%20Block%2C%20Shakarpur%2C%20Delhi%20110092"
+            href="https://www.google.com/maps/place/307,+Surya+Complex,+21,+Veer+Savarkar+Block,+Dayanand+Colony,+Shakarpur,+Delhi,+110092/@28.6350129,77.2853106,20.4z/data=!4m10!1m2!2m1!1s307,+Surya+Complex,+Veer+Savarkar+Block,+Shakarpur,+Delhi+110092!3m6!1s0x390cfcaa19e6a4c9:0x654c83463ad9005f!8m2!3d28.6348765!4d77.2853406!15sCkAzMDcsIFN1cnlhIENvbXBsZXgsIFZlZXIgU2F2YXJrYXIgQmxvY2ssIFNoYWthcnB1ciwgRGVsaGkgMTEwMDkykgEKc3VicHJlbWlzZeABAA!16s%2Fg%2F11y20b3ljh?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-contact-card footer-contact-right"
@@ -123,8 +123,7 @@ function Footer() {
             <span className="footer-contact-text">
               <small>Office Address</small>
               <strong>
-                307, Surya Complex, Veer Savarkar Block, Shakarpur, Delhi
-                110092
+                Surya Complex, 21, Veer Savarkar Block, Dayanand Colony, Shakarpur, Delhi, 110092
               </strong>
             </span>
           </a>
