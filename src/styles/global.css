@@ -789,3 +789,54 @@ button {
     filter: none !important;
   }
 }
+
+@media (max-width: 576px) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  [style*="transform"],
+  [style*="opacity"],
+  [style*="filter"] {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  .hero-letter,
+  .animated-letter,
+  .hero-title,
+  .hero-description,
+  .hero-label,
+  .hero-capabilities,
+  .section-title,
+  .section-description {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
+
+  .hero-local-polygons,
+  .practice-bg-shapes,
+  .knowledge-bg-shapes,
+  .why-bg-shapes,
+  .footer-bg-shapes {
+    display: none !important;
+  }
+
+  .hero-bg-video video {
+    display: none !important;
+  }
+
+  .hero-scroll-cue {
+    display: none !important;
+  }
+}
