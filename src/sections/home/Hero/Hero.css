@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 
-/* Full video hero */
+/* Full hero background: poster first, video only on strong devices */
 
 .hero-bg-video {
   position: absolute;
@@ -26,7 +26,11 @@
   background: #081851;
 }
 
-.hero-bg-video video {
+.hero-bg-video video,
+.hero-poster-image {
+  position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 120%;
 
@@ -43,12 +47,20 @@
     hue-rotate(5deg);
 }
 
+.hero-poster-image {
+  z-index: 0;
+}
+
+.hero-bg-video video {
+  z-index: 1;
+}
+
 .hero-bg-video::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  z-index: 1;
+  z-index: 2;
 
   background:
     linear-gradient(
@@ -74,7 +86,7 @@
   position: absolute;
   inset: 0;
 
-  z-index: 2;
+  z-index: 3;
 
   background:
     radial-gradient(
@@ -99,7 +111,7 @@
 
 /* Hero polygons */
 
-/* .hero-local-polygons {
+.hero-local-polygons {
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -178,11 +190,13 @@
   opacity: 0.24;
 
   transform: rotate(7deg);
-} */
+}
+
+/* Main layout */
 
 .hero-container {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 
   display: grid;
   grid-template-columns: minmax(0, 780px);
@@ -246,7 +260,7 @@
 .hero-letter {
   display: inline-block;
   flex-shrink: 0;
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
 }
 
 .hero-description {
@@ -296,7 +310,7 @@
     background 0.3s ease;
 }
 
-/* Primary CTA - warm white */
+/* Primary CTA */
 
 .hero-primary-btn {
   position: relative;
@@ -434,6 +448,8 @@
   transform: translateX(4px);
 }
 
+/* Capabilities */
+
 .hero-capabilities {
   max-width: 620px;
   margin-top: 3.8rem;
@@ -480,7 +496,7 @@
     );
 
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-bottom-fade::after {
@@ -513,7 +529,7 @@
 
   transform: translateX(-50%);
 
-  z-index: 3;
+  z-index: 5;
 
   width: fit-content;
 
@@ -523,7 +539,7 @@
   gap: 0.8rem;
 
   color: rgba(70, 70, 70, 0.76);
-  will-change: opacity, transform, filter;
+  will-change: opacity, transform;
 
   font-size: 0.78rem;
   font-weight: 750;
@@ -592,7 +608,8 @@
     padding-bottom: 90px;
   }
 
-  .hero-bg-video video {
+  .hero-bg-video video,
+  .hero-poster-image {
     object-position: center center;
   }
 
@@ -657,8 +674,15 @@
   }
 
   .hero-bg-video video {
+    display: none !important;
+  }
+
+  .hero-bg-video video,
+  .hero-poster-image {
+    height: 100%;
     object-position: center center;
-    opacity: 0.88;
+
+    opacity: 0.9;
 
     filter:
       saturate(1.02)
@@ -668,6 +692,8 @@
   }
 
   .hero-bg-video::before {
+    z-index: 2;
+
     background:
       linear-gradient(
         90deg,
@@ -683,14 +709,12 @@
       );
   }
 
-  .hero-local-poly-one {
-    width: 280px;
-    height: 160px;
-    top: 140px;
-    right: -150px;
-    opacity: 0.22;
+  .hero-bg-video::after {
+    display: none;
   }
 
+  .hero-local-polygons,
+  .hero-local-poly-one,
   .hero-local-poly-two,
   .hero-local-poly-three,
   .hero-local-poly-four {
@@ -706,6 +730,8 @@
     font-size: 0.62rem;
     letter-spacing: 0.16em;
     margin-bottom: 0.85rem;
+
+    text-shadow: none;
   }
 
   .hero-title {
@@ -713,13 +739,18 @@
     line-height: 1.12;
     letter-spacing: -0.95px;
     text-align: center;
+
+    text-shadow: none;
   }
 
   .hero-description {
     max-width: 94%;
     margin-inline: auto;
+
     font-size: 0.84rem;
     line-height: 1.75;
+
+    text-shadow: none;
   }
 
   .hero-buttons {
@@ -730,13 +761,40 @@
   .hero-primary-btn,
   .hero-secondary-btn {
     width: 100%;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+
+    transition: none;
+  }
+
+  .hero-primary-btn::before,
+  .hero-secondary-btn::before {
+    display: none;
+  }
+
+  .hero-primary-btn:hover,
+  .hero-secondary-btn:hover {
+    transform: none;
+  }
+
+  .hero-btn-arrow {
+    transition: none;
   }
 
   .hero-capabilities {
     justify-content: center;
     text-align: center;
+
     margin-top: 2.2rem;
+
     font-size: 0.78rem;
+
+    text-shadow: none;
+  }
+
+  .hero-scroll-cue {
+    display: none;
   }
 }
 
@@ -749,52 +807,5 @@
 
   .hero-description {
     font-size: 0.86rem;
-  }
-}
-
-.hero-mobile-poster {
-  display: none;
-}
-
-@media (max-width: 576px) {
-  .hero-bg-video video {
-    display: none;
-  }
-
-  .hero-bg-video picture,
-  .hero-mobile-poster {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-mobile-poster {
-    object-fit: cover;
-    object-position: center center;
-
-    opacity: 0.9;
-
-    filter:
-      saturate(1.04)
-      contrast(1.08)
-      brightness(0.82)
-      hue-rotate(5deg);
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-local-polygons {
-    display: none;
-  }
-
-  .hero-title {
-    text-shadow:
-      0 2px 8px rgba(0, 0, 0, 0.28);
-  }
-
-  .hero-description,
-  .hero-label,
-  .hero-capabilities {
-    text-shadow: none;
   }
 }

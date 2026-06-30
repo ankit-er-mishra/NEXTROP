@@ -1,5 +1,5 @@
 import "./Hero.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroCityVideo from "../../../assets/videos/hero-city.mp4";
 import heroPoster from "../../../assets/images/hero-video-poster.jpg";
@@ -7,13 +7,41 @@ import heroPoster from "../../../assets/images/hero-video-poster.jpg";
 function Hero() {
   const ease = [0.22, 1, 0.36, 1];
 
-  const videoRef = useRef(null);
   const [hideScrollCue, setHideScrollCue] = useState(false);
+  const [shouldPlayVideo, setShouldPlayVideo] = useState(false);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.95;
-    }
+    const connection =
+      navigator.connection ||
+      navigator.mozConnection ||
+      navigator.webkitConnection;
+
+    const isMobile = window.innerWidth <= 768;
+    const isTabletOrSmallLaptop = window.innerWidth <= 1100;
+
+    const saveData = connection?.saveData;
+    const slowNetwork =
+      connection?.effectiveType === "slow-2g" ||
+      connection?.effectiveType === "2g" ||
+      connection?.effectiveType === "3g";
+
+    const lowMemory = navigator.deviceMemory && navigator.deviceMemory <= 4;
+    const lowCpu = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    const canPlayVideo =
+      !isMobile &&
+      !isTabletOrSmallLaptop &&
+      !saveData &&
+      !slowNetwork &&
+      !lowMemory &&
+      !lowCpu &&
+      !reducedMotion;
+
+    setShouldPlayVideo(canPlayVideo);
   }, []);
 
   useEffect(() => {
@@ -81,29 +109,26 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg-video" aria-hidden="true">
-  <picture>
-    <source media="(max-width: 576px)" srcSet={heroPoster} />
-    <img className="hero-mobile-poster" src={heroPoster} alt="" />
-  </picture>
+  <img className="hero-poster-image" src={heroPoster} alt="" />
 
-  <video
-    ref={videoRef}
-    src={heroCityVideo}
-    poster={heroPoster}
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="none"
-  />
+  {shouldPlayVideo && (
+    <video
+      src={heroCityVideo}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="none"
+    />
+  )}
 </div>
 
-      <div className="hero-local-polygons" aria-hidden="true">
+      {/* <div className="hero-local-polygons" aria-hidden="true">
         <span className="hero-local-poly hero-local-poly-one"></span>
         <span className="hero-local-poly hero-local-poly-two"></span>
         <span className="hero-local-poly hero-local-poly-three"></span>
         <span className="hero-local-poly hero-local-poly-four"></span>
-      </div>
+      </div> */}
 
       <div className="container hero-container">
         <div className="hero-content">
