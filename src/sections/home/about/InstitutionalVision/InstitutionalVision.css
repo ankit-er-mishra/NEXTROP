@@ -2,7 +2,9 @@
   position: relative;
   z-index: 3;
 
-  padding: 58px 0 58px;
+  padding: 58px 0 68px;
+
+  scroll-margin-top: 110px;
 
   background:
     linear-gradient(
@@ -367,9 +369,6 @@
   background: rgba(17, 24, 39, 0.68);
   border: 1px solid rgba(255, 255, 255, 0.14);
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
   box-shadow:
     0 18px 44px rgba(0, 0, 0, 0.18);
 }
@@ -435,7 +434,7 @@
 .institutional-label {
   display: inline-block;
 
-  color: rgba(31, 41, 71, 0.58);
+  color: rgba(199, 142, 21, 0.96);
 
   font-size: 0.7rem;
   line-height: 1;
@@ -474,37 +473,39 @@
   margin-bottom: 1.25rem;
 }
 
-.institutional-closing {
+.institutional-proof-statement {
+  position: relative;
+
   max-width: 690px;
 
   margin-top: 1.75rem;
-  padding: 1.35rem 1.45rem;
+  padding-left: 1.15rem;
 
-  border-radius: 22px;
+  color: rgba(31, 41, 71, 0.86);
 
-  color: rgba(31, 41, 71, 0.9);
-
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   line-height: 1.72;
-  font-weight: 800;
+  font-weight: 760;
+  letter-spacing: -0.015em;
+}
+
+.institutional-proof-statement::before {
+  content: "";
+  position: absolute;
+
+  left: 0;
+  top: 0.22rem;
+  bottom: 0.22rem;
+
+  width: 2px;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.72),
-      rgba(248, 250, 252, 0.5)
+      180deg,
+      rgba(184, 137, 58, 0.95),
+      rgba(184, 137, 58, 0.28)
     );
-
-  border: 1px solid rgba(255, 255, 255, 0.76);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  box-shadow:
-    0 16px 38px rgba(26, 37, 64, 0.055),
-    inset 0 1px 0 rgba(255, 255, 255, 0.86);
 }
-
 .institutional-proof-strip {
   margin-top: 1.75rem;
 
@@ -524,7 +525,7 @@
 
   border-radius: 999px;
 
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(109, 146, 200, 0.18);
 
   color: rgba(31, 41, 71, 0.8);
@@ -537,9 +538,31 @@
   box-shadow:
     0 12px 28px rgba(26, 37, 64, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.72);
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease,
+    color 0.28s ease,
+    box-shadow 0.28s ease;
 }
 
-/* Smooth connector to TrustArchitecture */
+.institutional-proof-strip span:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(184, 137, 58, 0.58);
+
+  background: rgba(255, 255, 255, 0.96);
+
+  color: rgba(31, 41, 71, 0.94);
+
+  box-shadow:
+    0 16px 36px rgba(26, 37, 64, 0.075),
+    0 0 0 4px rgba(184, 137, 58, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
+}
+
+/* Smooth connector */
 
 .institutional-bottom-flow-line {
   position: absolute;
@@ -657,6 +680,7 @@
 @media (max-width: 576px) {
   .institutional-vision {
     padding: 76px 0 82px;
+    scroll-margin-top: 92px;
   }
 
   .institutional-container {
@@ -732,13 +756,13 @@
     line-height: 1.78;
   }
 
-  .institutional-closing {
-    padding: 1.1rem;
-    border-radius: 18px;
+  .institutional-proof-statement {
+  margin-top: 1.45rem;
+  padding-left: 0.95rem;
 
-    font-size: 0.95rem;
-    line-height: 1.72;
-  }
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
 
   .institutional-proof-strip {
     gap: 0.6rem;

@@ -8,6 +8,7 @@ import AboutHero from "../../sections/home/about/AboutHero/AboutHero";
 import InstitutionalVision from "../../sections/home/about/InstitutionalVision/InstitutionalVision";
 import TrustArchitecture from "../../sections/home/about/TrustArchitecture/TrustArchitecture";
 
+
 function About() {
   return (
     <div className="about-page">

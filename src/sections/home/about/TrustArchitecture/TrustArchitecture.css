@@ -2,9 +2,16 @@
   position: relative;
   z-index: 3;
 
-  padding: 46px 0 98px;
+  padding: 42px 0 94px;
 
-  background: transparent;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(248, 250, 252, 0.95) 48%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
   overflow: hidden;
 }
 
@@ -13,50 +20,59 @@
   z-index: 2;
 }
 
+/* Header */
+
 .trust-architecture-header {
   display: grid;
-  grid-template-columns: 1fr 0.78fr;
-  gap: 4.5rem;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.72fr);
+  gap: 5rem;
   align-items: end;
 
-  margin-bottom: 3.2rem;
+  margin-bottom: 4.4rem;
 }
 
 .trust-architecture-label {
   display: inline-block;
 
-  color: rgba(31, 41, 71, 0.58);
+  margin-bottom: 1.05rem;
+
+  color: rgba(184, 137, 58, 0.96);
 
   font-size: 0.68rem;
-  font-weight: 780;
+  font-weight: 840;
   letter-spacing: 0.22em;
+  line-height: 1;
   text-transform: uppercase;
-
-  margin-bottom: 1.15rem;
 }
 
 .trust-architecture-title {
+  max-width: 760px;
+
+  margin: 0;
+
   color: var(--primary);
 
-  font-size: 2.85rem;
-  line-height: 1.15;
-  font-weight: 880;
-  letter-spacing: -1.45px;
+  font-size: clamp(2.45rem, 4vw, 3.95rem);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.06em;
 
+  text-wrap: balance;
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
-  text-wrap: balance;
 }
 
 .trust-architecture-header p {
+  max-width: 500px;
+
+  margin: 0 0 0.35rem;
+
   color: rgba(31, 41, 71, 0.66);
 
-  font-size: 1.02rem;
-  line-height: 1.85;
-  font-weight: 530;
-
-  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.82;
+  font-weight: 540;
 }
 
 /* Decorative shapes */
@@ -77,264 +93,203 @@
   background:
     linear-gradient(
       135deg,
-      rgba(70, 118, 191, 0.13),
-      rgba(31, 41, 71, 0.05)
+      rgba(109, 146, 200, 0.08),
+      rgba(31, 41, 71, 0.035)
     );
 
-  border: 1px solid rgba(70, 118, 191, 0.06);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 22px 60px rgba(31, 41, 71, 0.035);
+  border: 1px solid rgba(109, 146, 200, 0.04);
 }
 
 .trust-shape-one {
-  width: 360px;
-  height: 210px;
+  width: 390px;
+  height: 220px;
 
-  top: 110px;
-  right: -130px;
+  top: 86px;
+  right: -150px;
 
   clip-path: polygon(18% 0, 100% 22%, 78% 100%, 0 74%);
-  opacity: 0.36;
+  opacity: 0.26;
 
   transform: rotate(14deg);
 }
 
 .trust-shape-two {
-  width: 300px;
-  height: 175px;
+  width: 310px;
+  height: 178px;
 
-  bottom: 50px;
-  left: -90px;
+  bottom: 42px;
+  left: -110px;
 
   clip-path: polygon(0 22%, 86% 0, 100% 70%, 20% 100%);
-  opacity: 0.28;
+  opacity: 0.2;
 
   transform: rotate(-12deg);
 }
 
 .trust-shape-three {
-  width: 220px;
-  height: 128px;
+  width: 230px;
+  height: 132px;
 
-  top: 46%;
+  top: 42%;
   left: 42%;
 
   clip-path: polygon(10% 0, 100% 24%, 72% 100%, 0 70%);
-  opacity: 0.22;
+  opacity: 0.14;
 
   transform: rotate(18deg);
 }
 
-/* Premium equal-height row grid */
+/* Editorial process architecture */
 
 .trust-process-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 1.15rem;
 
-  align-items: stretch;
+  border-top: 1px solid rgba(31, 41, 71, 0.18);
+  border-bottom: 1px solid rgba(31, 41, 71, 0.12);
 }
 
 .trust-process-card {
   position: relative;
 
-  height: 100%;
-  min-height: 340px;
+  min-height: 310px;
 
-  padding: 1.85rem 1.65rem;
-
-  border-radius: 24px;
+  padding: 2.1rem 2rem 2.2rem;
 
   display: flex;
   flex-direction: column;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.78),
-      rgba(248, 250, 252, 0.52)
-    );
+  background: transparent;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
 
-  border: 1px solid rgba(255, 255, 255, 0.76);
-
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-
-  box-shadow:
-    0 18px 46px rgba(26, 37, 64, 0.055),
-    0 34px 74px rgba(26, 37, 64, 0.035),
-    inset 0 1px 0 rgba(255, 255, 255, 0.88);
-
-  overflow: hidden;
+  overflow: visible;
 
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease;
+    background 0.28s ease,
+    transform 0.28s ease;
+}
+
+.trust-process-card:not(:first-child) {
+  border-left: 1px solid rgba(31, 41, 71, 0.1);
 }
 
 .trust-process-card::before {
   content: "";
   position: absolute;
-  inset: 0;
 
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(109, 146, 200, 0.16),
-      transparent 38%
-    ),
-    linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0.45),
-      transparent 42%
-    );
-
-  opacity: 0.8;
-  pointer-events: none;
-}
-
-.trust-process-card::after {
-  content: "";
-  position: absolute;
-
-  left: 1.55rem;
-  right: 1.55rem;
-  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  top: -1px;
 
   height: 2px;
 
   background:
     linear-gradient(
       90deg,
-      rgba(109, 146, 200, 0),
-      rgba(109, 146, 200, 0.58),
-      rgba(225, 189, 114, 0.4),
-      rgba(109, 146, 200, 0)
+      rgba(184, 137, 58, 0.95),
+      rgba(184, 137, 58, 0.2)
     );
 
   opacity: 0;
-  transform: scaleX(0.5);
+  transform: scaleX(0.45);
+  transform-origin: left center;
 
   transition:
-    opacity 0.35s ease,
-    transform 0.35s ease;
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
-.trust-process-card:hover {
-  transform: translateY(-6px);
+.trust-process-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.9),
-      rgba(248, 250, 252, 0.66)
+      180deg,
+      rgba(255, 255, 255, 0.64),
+      rgba(248, 250, 252, 0.18)
     );
 
-  border-color: rgba(109, 146, 200, 0.34);
+  opacity: 0;
+  pointer-events: none;
 
-  box-shadow:
-    0 24px 58px rgba(26, 37, 64, 0.08),
-    0 44px 92px rgba(26, 37, 64, 0.055),
-    inset 0 1px 0 rgba(255, 255, 255, 0.94);
+  transition: opacity 0.3s ease;
+}
+
+.trust-process-card:hover {
+  transform: translateY(-3px);
+}
+
+.trust-process-card:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .trust-process-card:hover::after {
   opacity: 1;
-  transform: scaleX(1);
+}
+
+/* Remove icon noise */
+
+.trust-card-icon {
+  display: none;
 }
 
 .trust-card-top {
   position: relative;
   z-index: 2;
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
+  display: block;
 
-  margin-bottom: 1.55rem;
-}
-
-.trust-card-icon {
-  width: 58px;
-  height: 58px;
-
-  border-radius: 40%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(109, 146, 200, 0.14),
-      rgba(219, 219, 219, 0.62)
-    );
-
-  border: 1px solid rgba(109, 146, 200, 0.2);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.74),
-    0 12px 26px rgba(26, 37, 64, 0.045);
-
-  flex-shrink: 0;
-}
-
-.trust-card-icon svg {
-  width: 27px;
-  height: 27px;
-
-  fill: none;
-  stroke: var(--primary);
-  stroke-width: 1.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  margin-bottom: 2.25rem;
 }
 
 .trust-card-top span {
-  color: rgba(31, 41, 71, 0.12);
+  display: inline-block;
 
-  font-size: 1.45rem;
+  color: rgba(184, 137, 58, 0.96);
+
+  font-size: 1rem;
   line-height: 1;
   font-weight: 900;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.025em;
 }
 
 .trust-process-card h3 {
   position: relative;
   z-index: 2;
 
+  max-width: 220px;
+
+  margin: 0 0 1rem;
+
   color: var(--primary);
 
   font-size: 1.16rem;
   line-height: 1.34;
   font-weight: 880;
-
-  min-height: 3rem;
-
-  margin-bottom: 0.85rem;
+  letter-spacing: -0.03em;
 }
 
 .trust-process-card p {
   position: relative;
   z-index: 2;
 
+  max-width: 245px;
+
+  margin: auto 0 0;
+
   color: rgba(31, 41, 71, 0.64);
 
-  font-size: 0.92rem;
-  line-height: 1.78;
+  font-size: 0.94rem;
+  line-height: 1.72;
   font-weight: 520;
-
-  margin-top: auto;
 }
 
-/* Remove uneven stagger offsets */
+/* Remove old stagger offsets */
 
 .trust-process-card-1,
 .trust-process-card-2,
@@ -346,107 +301,141 @@
 /* Responsive */
 
 @media (max-width: 1100px) {
-  .trust-architecture-header {
-    gap: 3rem;
-  }
-
-  .trust-architecture-title {
-    font-size: 2.5rem;
-  }
-
-  .trust-process-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 1fr;
-  }
-
-  .trust-process-card {
-    min-height: 300px;
-  }
-}
-
-@media (max-width: 992px) {
   .trust-architecture {
-    padding: 78px 0 88px;
+    padding: 76px 0 96px;
   }
 
   .trust-architecture-header {
     grid-template-columns: 1fr;
-    gap: 1.4rem;
-    margin-bottom: 2.6rem;
+    gap: 1.35rem;
+
+    margin-bottom: 3.4rem;
   }
 
   .trust-architecture-header p {
     max-width: 720px;
   }
+
+  .trust-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-process-card {
+    min-height: 270px;
+  }
+
+  .trust-process-card:nth-child(3) {
+    border-left: 0;
+  }
+
+  .trust-process-card:nth-child(n + 3) {
+    border-top: 1px solid rgba(31, 41, 71, 0.1);
+  }
+
+  .trust-process-card h3,
+  .trust-process-card p {
+    max-width: 320px;
+  }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .trust-architecture {
-    padding: 64px 0 76px;
-  }
-
-  .trust-architecture-title {
-    font-size: clamp(1.75rem, 7vw, 2.15rem);
-    line-height: 1.18;
-    letter-spacing: -0.7px;
-  }
-
-  .trust-architecture-header p {
-    font-size: 0.94rem;
-    line-height: 1.78;
+    padding: 66px 0 84px;
   }
 
   .trust-process-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
   }
 
   .trust-process-card {
     min-height: auto;
-    padding: 1.45rem;
-    border-radius: 20px;
+    padding: 1.8rem 0;
+  }
+
+  .trust-process-card:not(:first-child) {
+    border-left: 0;
+    border-top: 1px solid rgba(31, 41, 71, 0.1);
+  }
+
+  .trust-process-card:nth-child(3) {
+    border-left: 0;
+  }
+
+  .trust-process-card::before {
+    left: 0;
+    right: auto;
+
+    width: 92px;
+  }
+
+  .trust-process-card::after {
+    display: none;
   }
 
   .trust-card-top {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.2rem;
   }
 
-  .trust-card-icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .trust-card-icon svg {
-    width: 25px;
-    height: 25px;
-  }
-
-  .trust-card-top span {
-    font-size: 1.25rem;
-  }
-
-  .trust-process-card h3 {
-    min-height: auto;
-    font-size: 1.05rem;
+  .trust-process-card h3,
+  .trust-process-card p {
+    max-width: 620px;
   }
 
   .trust-process-card p {
     margin-top: 0;
-    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .trust-architecture {
+    padding: 58px 0 74px;
+  }
+
+  .trust-architecture-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .trust-architecture-title {
+    font-size: clamp(1.9rem, 8vw, 2.45rem);
+    line-height: 1.12;
+    letter-spacing: -0.045em;
+  }
+
+  .trust-architecture-header {
+    margin-bottom: 2.6rem;
+  }
+
+  .trust-architecture-header p {
+    font-size: 0.92rem;
+    line-height: 1.72;
+  }
+
+  .trust-card-top span {
+    font-size: 0.92rem;
+  }
+
+  .trust-process-card h3 {
+    font-size: 1.04rem;
+  }
+
+  .trust-process-card p {
+    font-size: 0.88rem;
+    line-height: 1.68;
   }
 
   .trust-shape-one {
     width: 260px;
     height: 150px;
     right: -160px;
-    opacity: 0.24;
+    opacity: 0.14;
   }
 
   .trust-shape-two {
     width: 230px;
     height: 135px;
     left: -130px;
-    opacity: 0.2;
+    opacity: 0.12;
   }
 
   .trust-shape-three {

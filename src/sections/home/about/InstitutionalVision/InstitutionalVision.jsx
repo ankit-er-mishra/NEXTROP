@@ -22,7 +22,11 @@ function InstitutionalVision() {
   ];
 
   return (
-    <section className="institutional-vision" ref={sectionRef}>
+    <section
+      className="institutional-vision"
+      id="institutional-vision"
+      ref={sectionRef}
+    >
       <div className="institutional-bg-shapes" aria-hidden="true">
         <span className="institutional-shape institutional-shape-one"></span>
         <span className="institutional-shape institutional-shape-two"></span>
@@ -107,7 +111,7 @@ function InstitutionalVision() {
               },
             }}
           >
-            THE NEXTROP FOUNDATION
+            NEXTROP FOUNDATION
           </motion.span>
 
           <h2 className="institutional-title">
@@ -156,7 +160,7 @@ function InstitutionalVision() {
           </motion.p>
 
           <motion.div
-            className="institutional-closing"
+            className="institutional-proof-statement"
             variants={{
               hidden: { opacity: 0, y: 18 },
               visible: {
@@ -166,8 +170,8 @@ function InstitutionalVision() {
               },
             }}
           >
-            We do not treat compliance as paperwork. We treat it as the
-            operating architecture behind serious businesses.
+            Built for founders, investors, and leadership teams who need
+            governance systems that stand up to scrutiny.
           </motion.div>
 
           <motion.div
