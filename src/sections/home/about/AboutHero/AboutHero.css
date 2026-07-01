@@ -37,9 +37,9 @@
 
   filter:
     grayscale(0.02)
-    saturate(1.2)
-    contrast(1.12)
-    brightness(0.9)
+    saturate(1.16)
+    contrast(1.1)
+    brightness(0.86)
     hue-rotate(8deg);
 }
 
@@ -51,6 +51,18 @@
   inset: 0;
 
   background:
+    radial-gradient(
+      circle at 54% 42%,
+      rgba(72, 137, 226, 0.22) 0%,
+      rgba(72, 137, 226, 0.14) 24%,
+      rgba(72, 137, 226, 0.08) 42%,
+      transparent 62%
+    ),
+    radial-gradient(
+      circle at 78% 36%,
+      rgba(109, 146, 200, 0.13) 0%,
+      transparent 38%
+    ),
     linear-gradient(
       90deg,
       rgba(5, 16, 44, 0.96) 0%,
