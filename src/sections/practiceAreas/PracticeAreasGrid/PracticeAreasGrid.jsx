@@ -54,13 +54,6 @@ function PracticeAreasGrid() {
             "Valuation support for transactions, investments, restructuring, regulatory requirements, and strategic business decisions.",
         },
       ],
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M8 12h8" />
-          <path d="M12 8v8" />
-          <path d="M4 7h6l2 2h8v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7z" />
-        </svg>
-      ),
     },
     {
       id: "governance",
@@ -89,14 +82,6 @@ function PracticeAreasGrid() {
             "ESOP structuring, documentation, governance approvals, compliance tracking, and stakeholder communication support.",
         },
       ],
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M7 3h10v18H7V3z" />
-          <path d="M10 8h4" />
-          <path d="M10 12h4" />
-          <path d="M10 16h3" />
-        </svg>
-      ),
     },
     {
       id: "compliance",
@@ -133,12 +118,6 @@ function PracticeAreasGrid() {
             "Business-aligned tax advisory coordination for compliance planning, transactions, structuring, and strategic decisions.",
         },
       ],
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M12 3L5 6v6c0 4.6 2.8 7.4 7 9 4.2-1.6 7-4.4 7-9V6l-7-3z" />
-          <path d="M9 12l2 2 4-4" />
-        </svg>
-      ),
     },
     {
       id: "advisory",
@@ -175,13 +154,6 @@ function PracticeAreasGrid() {
             "Support for corporate disputes, regulatory representations, notices, responses, and litigation-linked advisory work.",
         },
       ],
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M12 3v18" />
-          <path d="M5 10l7-7 7 7" />
-          <path d="M7 21h10" />
-        </svg>
-      ),
     },
     {
       id: "cross-border",
@@ -210,14 +182,6 @@ function PracticeAreasGrid() {
             "Guidance on foreign exchange regulations, cross-border transactions, reporting obligations, and compliance discipline.",
         },
       ],
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9" />
-          <path d="M3 12h18" />
-          <path d="M12 3c3 3 3 15 0 18" />
-          <path d="M12 3c-3 3-3 15 0 18" />
-        </svg>
-      ),
     },
   ];
 
@@ -285,15 +249,6 @@ function PracticeAreasGrid() {
               without navigating a crowded service directory.
             </motion.p>
           </div>
-
-          <motion.div
-            className="practice-domain-badge"
-            initial={{ opacity: 0, y: 14 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
-            transition={{ duration: 0.7, delay: 0.16, ease }}
-          >
-            Master Detail System
-          </motion.div>
         </div>
 
         <motion.div
@@ -404,10 +359,6 @@ function PracticeAreasGrid() {
                     <span>{selectedDomain.label}</span>
                     <h2>{selectedDomain.title}</h2>
                   </div>
-
-                  <div className="practice-detail-icon" aria-hidden="true">
-                    {selectedDomain.icon}
-                  </div>
                 </div>
 
                 <p className="practice-detail-description">
@@ -439,7 +390,7 @@ function PracticeAreasGrid() {
                         </div>
 
                         <span className="practice-service-action">
-                          Open Brief <span>→</span>
+                          View Brief <span>→</span>
                         </span>
                       </Link>
                     </motion.div>
