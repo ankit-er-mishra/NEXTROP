@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/knowledge-hub" element={<KnowledgeHub />} />
         <Route path="/contact" element={<Contact />} />
     </Routes>
+    <Analytics />
     </>
   );
 }
